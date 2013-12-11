@@ -4,7 +4,6 @@ section.our-computers {
 	@include margin-std;
 	span.label {
 		font-size: 1rem;
-		margin-left: 10px;
 	}
 
 	.computers {
@@ -20,7 +19,7 @@ section.our-computers {
 		}
 	}
 
-	.addons li {
-		margin-bottom: 10px;
+	h4.computer-name span.label {
+		margin-left: 15px;
 	}
 }
