@@ -1,0 +1,21 @@
+// Page Header
+
+section.page-header {
+	padding: 0 0 150px;
+	background: url("../images/stock-photo-17410153-it-support-engineer.jpg") center center no-repeat $primary-color;
+	background-size: cover;
+	color: #FFF;
+	text-shadow: $primary-color 1px 1px 1px;
+	h1, h3, label {
+		color: #FFF;
+	}
+
+	section.hero {
+		em, span {
+			color: $secondary-color;
+		}
+		.button {
+			margin-right: 10px;
+		}
+	}
+}

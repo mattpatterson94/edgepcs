@@ -1,0 +1,26 @@
+// "Our Computers" Section
+
+section.our-computers {
+	@include margin-std;
+	span.label {
+		font-size: 1rem;
+		margin-left: 10px;
+	}
+
+	.computers {
+		margin-bottom: 20px;
+		a {
+			display: inline-block;
+			border: 3px solid transparent;
+			@include transition-std;
+
+			&.active, &:hover {
+				border: 3px solid $secondary-color;
+			}
+		}
+	}
+
+	.addons li {
+		margin-bottom: 10px;
+	}
+}

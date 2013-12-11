@@ -1,0 +1,25 @@
+// General
+
+h1, h2, h3, h4, h5 {
+	font-weight: 400;
+}
+
+hr {
+	border-width: 2px;
+	&.small {
+		border-color: $secondary-color;
+		max-width: 50px;
+	}
+}
+
+@mixin transition-std {
+	-webkit-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-moz-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-ms-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	-o-transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+	transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+@mixin margin-std {
+	margin: 50px 0;
+}
