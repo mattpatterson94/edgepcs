@@ -1,4 +1,5 @@
 $(document).foundation();
+$("header").headroom();
 
 function getComputers() {
 	return $.ajax({
