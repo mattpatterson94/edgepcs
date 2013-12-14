@@ -229,6 +229,25 @@ b){return!1},onFormValidate:function(a,b,c){},onFieldError:function(a,b,c){},onF
 $(document).foundation();
 $("header").headroom();
 
+$("a[href='#computers']").click(function(){
+var catCompPosition = jQuery('#computers').offset().top;
+$("html, body").animate({scrollTop: catCompPosition}, "slow");
+return false;
+});
+
+$("a[href='#repairs']").click(function(){
+var catRepairsPosition = jQuery('#repairs').offset().top;
+$("html, body").animate({scrollTop: catRepairsPosition}, "slow");
+return false;
+});
+
+$("a[href='#contact']").click(function(){
+var catContactPosition = jQuery('#contact').offset().top;
+$("html, body").animate({scrollTop: catContactPosition}, "slow");
+return false;
+});
+
+
 function getComputers() {
 	return $.ajax({
 		url: "json/computers.json"
