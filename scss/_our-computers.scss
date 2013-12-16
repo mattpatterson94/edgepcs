@@ -11,6 +11,7 @@ section.our-computers {
 		a {
 			display: inline-block;
 			border: 3px solid transparent;
+			max-width:135px;
 			@include transition-std;
 
 			&.active, &:hover {
