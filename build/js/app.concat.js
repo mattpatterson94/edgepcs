@@ -227,7 +227,13 @@ d.fn.domApi=function(a){var b,c={},e=RegExp("^"+a,"i");if("undefined"===typeof t
 b){return!1},onFormValidate:function(a,b,c){},onFieldError:function(a,b,c){},onFieldSuccess:function(a,b,c){}}}}(window.jQuery||window.Zepto);
 
 $(document).foundation();
-$("header").headroom();
+$("header").headroom({
+	"classes": {
+		"initial": "animated",
+		"pinned": "slideInDown",
+		"unpinned": "slideOutUp"
+	}
+});
 
 $("a[href='#computers']").click(function(){
 var catCompPosition = jQuery('#computers').offset().top;

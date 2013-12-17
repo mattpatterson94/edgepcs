@@ -1,5 +1,11 @@
 $(document).foundation();
-$("header").headroom();
+$("header").headroom({
+	"classes": {
+		"initial": "animated",
+		"pinned": "slideInDown",
+		"unpinned": "slideOutUp"
+	}
+});
 
 $("a[href='#computers']").click(function(){
 var catCompPosition = jQuery('#computers').offset().top;
