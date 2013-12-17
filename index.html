@@ -11,25 +11,27 @@
 </head>
 <body ng-app>
 	<section class="page-header">
+		<header data-magellan-expedition="fixed">
+			<div class="row">
+				<section class="large-3 columns">
+					<a href="#" class="logo"><img src="build/images/logo.png" alt="EDGE PCs"></a>
+				</section>
+				<nav class="large-6 columns">
+					<ul class="inline-list right">
+						<li data-magellan-arrival="home"><a href="#home">Home</a></li>
+						<li data-magellan-arrival="computers"><a href="#computers">Our Computers</a></li>
+						<li data-magellan-arrival="repairs"><a href="#repairs">Repairs <em>&amp;</em> Support</a></li>
+						<li data-magellan-arrival="contace"><a href="#contact">Contact Us</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
 		<div class="overlay">
-			<header>
-				<div class="row">
-					<section class="large-3 columns">
-						<a href="#" class="logo"><img src="build/images/logo.png" alt="EDGE PCs"></a>
-					</section>
-					<nav class="large-6 columns">
-						<ul class="inline-list right">
-							<li class="active"><a href="#">Home</a></li>
-							<li><a href="#computers">Our Computers</a></li>
-							<li><a href="#repairs">Repairs <em>&amp;</em> Support</a></li>
-							<li><a href="#contact">Contact Us</a></li>
-						</ul>
-					</nav>
-				</div>
-			</header>
+			
 			<div class="row">
 				<section class="large-8 columns hero">
-					<h1>Affordable, reliable computer services <em>&amp;</em> sales for the <span>Gold Coast.</span></h1>
+					<a name="home"></a>
+					<h1 data-magellan-destination="home">Affordable, reliable computer services <em>&amp;</em> sales for the <span>Gold Coast.</span></h1>
 					<hr class="small">
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia, provident, eaque, commodi repellendus sunt aliquam dolorem assumenda officiis cum possimus non accusamus in expedita eos qui voluptas dolore fuga vel?</p>
 					<p class="show-for-large"><a href="#" class="button">Read more</a> or if you're in a rush, get in touch &rarr;</p>
@@ -88,9 +90,9 @@
 
 	<section class="our-computers" ng-controller="computerBuild">
 		<div class="row">
-			<a id="computers"></a>
 			<div class="large-12 columns">
-				<h2>Our Computers</h2>
+				<a id="computers"></a>
+				<h2 data-magellan-destination="computers">Our Computers</h2>
 				<hr class="small">
 				<div class="row computers">
 					<div class="large-2 columns">
@@ -258,9 +260,9 @@
 
 	<section class="repairs-support">
 		<div class="row">
-			<a id="repairs"></a>
 			<div class="large-12 columns">
-				<h2><small>Repairs <em>&amp;</em> Support</small><br>
+				<a id="repairs"></a>
+				<h2 data-magellan-destination="repairs"><small>Repairs <em>&amp;</em> Support</small><br>
 				Need computer help?</h2>
 				<hr class="small">
 				<div class="row">
@@ -286,9 +288,9 @@
 
 	<section class="contact-us">
 		<div class="row">
-			<a id="contact"></a>
 			<div class="large-12 columns">
-				<h2>Contact Us</h2>
+				<a id="contact"></a>
+				<h2 data-magellan-destination="contact">Contact Us</h2>
 				<hr class="small">
 				<div class="row">
 					<div class="large-6 columns">

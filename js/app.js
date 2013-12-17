@@ -1,29 +1,33 @@
 $(document).foundation();
-$("header").headroom({
-	"classes": {
-		"initial": "animated",
-		"pinned": "slideInDown",
-		"unpinned": "slideOutUp"
-	}
+// $("header").headroom({
+// 	"classes": {
+// 		"initial": "animated",
+// 		"pinned": "slideInDown",
+// 		"unpinned": "slideOutUp"
+// 	}
+// });
+
+
+// Aren't I genuis?
+$('a[href^="#"]').click(function(){
+	var headerHeight = $('header').height() + 30;
+	var catCompPosition = $($(this).attr("href")).offset().top;
+	var combinedHeight =  catCompPosition - headerHeight;
+	$("html, body").animate({scrollTop: combinedHeight}, "slow");
+	// return false;
 });
 
-$("a[href='#computers']").click(function(){
-var catCompPosition = jQuery('#computers').offset().top;
-$("html, body").animate({scrollTop: catCompPosition}, "slow");
-return false;
-});
+// $("a[href='#repairs']").click(function(){
+// var catRepairsPosition = jQuery('#repairs').offset().top;
+// $("html, body").animate({scrollTop: catRepairsPosition}, "slow");
+// return false;
+// });
 
-$("a[href='#repairs']").click(function(){
-var catRepairsPosition = jQuery('#repairs').offset().top;
-$("html, body").animate({scrollTop: catRepairsPosition}, "slow");
-return false;
-});
-
-$("a[href='#contact']").click(function(){
-var catContactPosition = jQuery('#contact').offset().top;
-$("html, body").animate({scrollTop: catContactPosition}, "slow");
-return false;
-});
+// $("a[href='#contact']").click(function(){
+// var catContactPosition = jQuery('#contact').offset().top;
+// $("html, body").animate({scrollTop: catContactPosition}, "slow");
+// return false;
+// });
 
 
 function getComputers() {

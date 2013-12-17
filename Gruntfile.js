@@ -23,8 +23,6 @@ module.exports = function(grunt) {
               'bower_components/foundation/js/foundation.min.js',
               // 'js/*.js'
               // 'js/!(app.concat|app.min).js'
-              'js/headroom.js',
-              'js/headroom.jquery.js',
               'js/parsley.min.js',
               'js/app.js'
           ],
