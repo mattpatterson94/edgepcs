@@ -78,11 +78,17 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
 
 
     $from = $from.' <'.$fromemail.'>';
-    if(!empty($cc)){
-        $hdrs['Cc'] = "$cc";
-    }
 
-    if(!mail($recipient, $subject, $htmlmessage, null, '-f'.$fromemail)){
+    // To send HTML mail, the Content-type header must be set
+    $headers  = 'MIME-Version: 1.0' . "\r\n";
+    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+
+    // Additional headers
+    $headers .= 'To: EDGE PCs <enquire@edgepcs.com.au>' . "\r\n";
+    $headers .= 'From: Admin <admin@edgepcs.com.au>' . "\r\n";
+
+
+    if(!mail($recipient, $subject, $htmlmessage, $headers)){
         echo "Failed sending mail.";
     } else {
         //echo "Mail was sent.";
