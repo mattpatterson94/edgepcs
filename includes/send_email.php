@@ -18,7 +18,7 @@ if (!empty($_POST['Submit'])) {
             echo "Form submission failed. Please press 'back' in your browser to try again.";
             die();
         }
-        $subject = "EDGEPCsEnquiry";
+        $subject = "EDGE PCs - Enquiry";
         // $recipient = 'enquire@edgepcs.com.au';
         $recipient = "matt.patterson94@gmail.com";
         $from = $_POST['name'];
