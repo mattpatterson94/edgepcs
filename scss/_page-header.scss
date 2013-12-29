@@ -6,8 +6,9 @@ section.page-header {
 	color: #FFF;
 	height:100%;
 	text-shadow: $primary-color 1px 1px 1px;
-	h1, h3, label {
+	h1, h3, label, p {
 		color: #FFF;
+		text-shadow: 2px 2px 5px rgba(0, 0, 0, 1);
 	}
 
 	section.hero {
