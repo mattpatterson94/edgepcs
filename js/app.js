@@ -184,3 +184,15 @@ $('#quoteform').parsley('addListener', {
         return false;
     }
 });
+
+
+$(document).ready(function(){
+    // add time stamp fields to any verify forms
+    var ts = Math.round((new Date()).getTime() / 1000);
+    $('form.verify.captcha').append('<input type="text" name="cap" value="" class="notsafe" style="display: none;" /><input type="hidden" name="vf_page_load_stamp" class="notsafe" value="'+ts+'" /><input type="hidden" name="vf_page_send_stamp" class="vf_page_send_stamp notsafe" value="" />');
+    $('form.verify').on('submit', function(){
+        var ts = Math.round((new Date()).getTime() / 1000);
+        $(this).find('input.vf_page_send_stamp').val(ts);
+        return verifyform($(this));
+    });
+});
