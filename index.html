@@ -39,7 +39,7 @@
 				</section>
 				<section class="large-4 columns enquiry-form">
 					
-					<form>
+					<form action="includes/send_email.php" method="post" enctype="multipart/form-data">
 						<div class="row">
 							<div class="small-9 small-offset-3 columns">
 								<h3>Get in touch now</h3>
@@ -50,7 +50,7 @@
 								<label for="name" class="inline">Name</label>
 							</div>
 							<div class="small-9 columns">
-								<input type="text" id="name" placeholder="eg. Joe Blogs">
+								<input type="text" name="name" id="name" placeholder="eg. Joe Blogs">
 							</div>
 						</div>
 						<div class="row">
@@ -58,7 +58,7 @@
 								<label for="email" class="inline">Email</label>
 							</div>
 							<div class="small-9 columns">
-								<input type="email" id="email" placeholder="eg. joe@ineedhelp.com">
+								<input type="email" name="email" id="email" placeholder="eg. joe@ineedhelp.com">
 							</div>
 						</div>
 						<div class="row">
@@ -66,7 +66,7 @@
 								<label for="enquiry-type" class="inline">Enquiry</label>
 							</div>
 							<div class="small-9 columns">
-								<select id="enquiry-type">
+								<select name="type" id="enquiry-type">
 									<option>New Computer</option>
 									<option>Computer Repair</option>
 									<option>Remote Support</option>
@@ -78,7 +78,7 @@
 								<label for="message" class="inline">Message</label>
 							</div>
 							<div class="small-9 columns">
-								<textarea id="message" placeholder="(be as specific as you can, please)"></textarea>
+								<textarea name="message" id="message" placeholder="(be as specific as you can, please)"></textarea>
 							</div>
 						</div>
 						<input type="submit" class="right button">
