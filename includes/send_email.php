@@ -19,7 +19,8 @@ if (!empty($_POST['Submit'])) {
             die();
         }
         $subject = "EDGE PCs - Enquiry";
-        $recipient = 'enquire@edgepcs.com.au';
+        // $recipient = 'enquire@edgepcs.com.au';
+        $recipient = "matt.patterson94@gmail.com";
         $from = $_POST['name'];
         $fromemail = $_POST['email'];
         $htmlmessage = "<style type='text/css'>body {font-family:Arial, Helvetica; font-size:12px; color:#333333;} b {color:#5c7893;}</style><html><body>";
@@ -81,7 +82,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
         $hdrs['Cc'] = "$cc";
     }
 
-    if(!mail($recipient, $subject, $htmlmessage)){
+    if(!mail($recipient, $subject, $htmlmessage, null, '-f'.$fromemail)){
         echo "Failed sending mail.";
     } else {
         //echo "Mail was sent.";
