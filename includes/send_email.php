@@ -52,7 +52,7 @@ if (!empty($_POST['Submit'])) {
     }
     // remove safe_form cookie
     @setcookie("safe_form_".$_POST['form_name'],"", time()-3600,"/");
-    header("Location: /");
+    header("Location: /index.html");
     exit;
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
