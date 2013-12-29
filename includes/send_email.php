@@ -1,14 +1,11 @@
 <?
 session_start();
-error_log("Thank you for your email");
 // verification
 if (!empty($_POST['Submit'])) {
-    error_log("Thank you for your email");
     if((isset($_POST['cap']) && !empty($_POST['cap'])) || !isset($_POST['cap'])){
         echo "Form submission failed! Please press 'back' in your browser to try again.";
         die();
     } else {
-        error_log("Thank you for your email");
         $time_limit = 3; // seconds
         // do another test if there is a page_load_stamp present
         // if page_send_stamp is less than or equal to page_load_stamp + $time_limit, we assume it's a bot and die
@@ -47,7 +44,6 @@ if (!empty($_POST['Submit'])) {
         $htmlmessage .= "</body></html>";
     }
     $attachments = $_FILES;
-    error_log("Thank you for your email");
 
     send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=true,$cc,$bcc);
     $confirmmessage = "Thank you for your email";
@@ -81,16 +77,11 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
 
 
     $from = $from.' <'.$fromemail.'>';
-    $hdrs = array(
-        'To' => "$to",
-        'From' => "$from",
-        'Subject' => "$subject"
-    );
     if(!empty($cc)){
         $hdrs['Cc'] = "$cc";
     }
 
-    if(!mail($recipient, $subject, $htmlmessage, $hdrs)){
+    if(!mail($recipient, $subject, $htmlmessage)){
         echo "Failed sending mail.";
     } else {
         //echo "Mail was sent.";
