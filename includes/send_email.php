@@ -85,7 +85,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
 
     // Additional headers
     $headers .= 'To: EDGE PCs <enquire@edgepcs.com.au>' . "\r\n";
-    $headers .= 'From: EDGE: Enquiry Form <admin@edgepcs.com.au>' . "\r\n";
+    $headers .= 'From: Enquiry Form <admin@edgepcs.com.au>' . "\r\n";
 
 
     if(!mail($recipient, $subject, $htmlmessage, $headers)){
