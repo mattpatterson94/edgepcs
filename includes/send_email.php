@@ -20,7 +20,7 @@ if (!empty($_POST['Submit'])) {
         }
         $subject = "EDGE PCs - Enquiry";
         // $recipient = 'enquire@edgepcs.com.au';
-        $recipient = "jordan@ionlinemail.com";
+        $recipient = "matt.patterson94@gmail.com";
         $from = $_POST['name'];
         $fromemail = $_POST['email'];
         $htmlmessage = "<style type='text/css'>body {font-family:Arial, Helvetica; font-size:12px; color:#333333;} b {color:#5c7893;}</style><html><body>";
@@ -28,21 +28,21 @@ if (!empty($_POST['Submit'])) {
 
         // name 
         if (isset($_POST['name'])) {
-            $htmlmessage .= "Name: " . $_POST['name'] . "/n";
+            $htmlmessage .= "Name: " . $_POST['name'] . "\r\n";
         } else {
             $htmlmessage .= "No Name";
         }
 
         // email 
         if (isset($_POST['email'])) {
-            $htmlmessage .= "Email: " . $_POST['email'] ."/n";
+            $htmlmessage .= "Email: " . $_POST['email'] ."\r\n";
         } else {
             $htmlmessage .= "No Email";
         }        
        
         // type of enquiry
         if (isset($_POST['type'])) {
-            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "/n";
+            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "\r\n";
         } else {
             $htmlmessage .= "Error";
         }
@@ -98,7 +98,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
     // Additional headers
-    $headers .= 'From: Enquiry Form <admin@edgepcs.com.au>' . "\r\n";
+    $headers .= 'From: Enquiry Form <noreply@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
 
 
     if(!mail($recipient, $subject, $htmlmessage, $headers)){
