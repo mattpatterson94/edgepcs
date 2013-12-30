@@ -19,8 +19,8 @@ if (!empty($_POST['Submit'])) {
             die();
         }
         $subject = "EDGE PCs - Enquiry";
-        // $recipient = 'enquire@edgepcs.com.au';
-        $recipient = "matt.patterson94@gmail.com";
+        $recipient = 'enquire@edgepcs.com.au';
+        // $recipient = "matt.patterson94@gmail.com";
         $from = $_POST['name'];
         $fromemail = $_POST['email'];
         $htmlmessage = "<style type='text/css'>body {font-family:Arial, Helvetica; font-size:12px; color:#333333;} b {color:#5c7893;}</style><html><body>";
@@ -28,21 +28,25 @@ if (!empty($_POST['Submit'])) {
 
         // name 
         if (isset($_POST['name'])) {
-            $htmlmessage .= "Name: " . $_POST['name'] . "<br><br>";
+            $htmlmessage .= "Name: " . $_POST['name'];
         } else {
             $htmlmessage .= "No Name";
         }
 
+        $htmlmessage .= "<br><br>";
+
         // email 
         if (isset($_POST['email'])) {
-            $htmlmessage .= "Email: " . $_POST['email'] ."<br><br>";
+            $htmlmessage .= "Email: " . $_POST['email'];
         } else {
             $htmlmessage .= "No Email";
         }        
+
+        $htmlmessage .= "<br><br>";
        
         // type of enquiry
         if (isset($_POST['type'])) {
-            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "<br><br>";
+            $htmlmessage .= "Enquiry about: " . $_POST['type'];
         } else {
             $htmlmessage .= "Error";
         }
@@ -51,7 +55,7 @@ if (!empty($_POST['Submit'])) {
 
         // enquiry
         if (isset($_POST['message'])) {
-            $htmlmessage .= wordwrap($_POST['message'], 70, "<br><br>");
+            $htmlmessage .= wordwrap($_POST['message'], 70, "\r\n");
         } else {
             $htmlmessage .= "No message was left";
         }
