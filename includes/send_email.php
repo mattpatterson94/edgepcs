@@ -28,21 +28,21 @@ if (!empty($_POST['Submit'])) {
 
         // name 
         if (isset($_POST['name'])) {
-            $htmlmessage .= "Name: " . $_POST['name'] . "\r\n";
+            $htmlmessage .= "Name: " . $_POST['name'] . "<br><br>";
         } else {
             $htmlmessage .= "No Name";
         }
 
         // email 
         if (isset($_POST['email'])) {
-            $htmlmessage .= "Email: " . $_POST['email'] ."\r\n";
+            $htmlmessage .= "Email: " . $_POST['email'] ."<br><br>";
         } else {
             $htmlmessage .= "No Email";
         }        
        
         // type of enquiry
         if (isset($_POST['type'])) {
-            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "\r\n";
+            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "<br><br>";
         } else {
             $htmlmessage .= "Error";
         }
@@ -51,7 +51,7 @@ if (!empty($_POST['Submit'])) {
 
         // enquiry
         if (isset($_POST['message'])) {
-            $htmlmessage .= wordwrap($_POST['message'], 70, "\r\n");
+            $htmlmessage .= wordwrap($_POST['message'], 70, "<br><br>");
         } else {
             $htmlmessage .= "No message was left";
         }
