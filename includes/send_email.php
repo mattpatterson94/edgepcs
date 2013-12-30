@@ -26,9 +26,23 @@ if (!empty($_POST['Submit'])) {
         $htmlmessage = "<style type='text/css'>body {font-family:Arial, Helvetica; font-size:12px; color:#333333;} b {color:#5c7893;}</style><html><body>";
         $textmessage = "";
 
+        // name 
+        if (isset($_POST['name'])) {
+            $htmlmessage .= "Name: " . $_POST['name'] . "/n";
+        } else {
+            $htmlmessage .= "No Name";
+        }
+
+        // email 
+        if (isset($_POST['email'])) {
+            $htmlmessage .= "Email: " . $_POST['email'] ."/n";
+        } else {
+            $htmlmessage .= "No Email";
+        }        
+       
         // type of enquiry
         if (isset($_POST['type'])) {
-            $htmlmessage .= "Enquiry about: " . $_POST['type'];
+            $htmlmessage .= "Enquiry about: " . $_POST['type'] . "/n";
         } else {
             $htmlmessage .= "Error";
         }
@@ -84,7 +98,6 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
     // Additional headers
-    $headers .= 'To: EDGE PCs <enquire@edgepcs.com.au>' . "\r\n";
     $headers .= 'From: Enquiry Form <admin@edgepcs.com.au>' . "\r\n";
 
 
