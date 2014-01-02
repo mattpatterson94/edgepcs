@@ -134,7 +134,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $factory = new Mail();
     $mail =& $factory->factory('sendmail');
     echo "135 Got here";
-    echo $mail->send($recipient, $hdrs, $body);
+    echo $mail->send($recipient, '', $body);
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
