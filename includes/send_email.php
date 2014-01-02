@@ -93,6 +93,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     include_once("Mail.php");
     include_once("Mail/mime.php");
 
+    echo "96 Got here";
 
     $recipient = (!empty($cc))?$recipient.", ".$cc:$recipient;
     $to = $recipient;
@@ -126,9 +127,12 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
             }
         }
     }
+
+    echo "131 Got here";
     $body = $mime->get();
     $hdrs = $mime->headers($hdrs);
     $mail =& Mail::factory('sendmail');
+    echo "135 Got here";
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
