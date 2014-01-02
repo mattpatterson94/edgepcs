@@ -134,7 +134,14 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $factory = new Mail();
     $mail =& $factory->factory('sendmail');
     echo "135 Got here";
-    echo $mail->send($recipient, '', $body);
+    echo $mail->send($recipient, $hdrs, $body);
+    $error = PEAR::isError($mail);
+    if ($error){
+        echo 'An error occurred.';
+        echo $error->getMessage(), "\n";
+    } else {
+        echo "No error";
+    }
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
