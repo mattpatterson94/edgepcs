@@ -131,13 +131,16 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     echo "131 Got here";
     $body = $mime->get();
     $hdrs = $mime->headers($hdrs);
-    $mail =& Mail::factory('sendmail');
+    $factory = new Mail();
+    $mail =& $factory->factory('sendmail');
     echo "135 Got here";
+    echo $mail->send($recipient, $hdrs, $body);
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
         echo "Mail was sent.";
     }
     echo "GOT HERE!!";
+    exit;
 }
 ?>
