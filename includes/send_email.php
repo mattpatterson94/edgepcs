@@ -78,16 +78,16 @@ if (!empty($_POST['Submit'])) {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // send email
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc="",$bcc=""){
+function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=true,$cc="",$bcc=""){
     if($debug){
         error_reporting(E_ALL);
-        /*
+        
                   echo "<b>Subject:</b> $subject <br/><b>Recipient:</b> $recipient <br/><b>From:</b> $from <br/><b>From Email:</b> $fromemail <br/><b>HTML:</b> $htmlmessage <br/> TEXT:</b> $textmessage <br/><br/>";
                   echo "<pre>";
                   print_r($attachments);
                   echo "</pre>";
                   exit;
-                  */
+                  
     }
     include_once("Mail.php");
     include_once("Mail/mime.php");
