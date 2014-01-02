@@ -132,8 +132,8 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
-        //echo "Mail was sent.";
+        echo "Mail was sent.";
     }
-    //echo "GOT HERE!!";
+    echo "GOT HERE!!";
 }
 ?>
