@@ -1,9 +1,10 @@
 <?
 session_start();
+
 // verification
 if (!empty($_POST['Submit'])) {
     if((isset($_POST['cap']) && !empty($_POST['cap'])) || !isset($_POST['cap'])){
-        echo "Form submission failed! Please press 'back' in your browser to try again.";
+        echo "Form submission failed! Please press 'back' in your browser to try again. 1";
         die();
     } else {
         $time_limit = 3; // seconds
@@ -11,16 +12,17 @@ if (!empty($_POST['Submit'])) {
         // if page_send_stamp is less than or equal to page_load_stamp + $time_limit, we assume it's a bot and die
         if(isset($_POST['vf_page_load_stamp'])){
             if(((int)$_POST['vf_page_send_stamp'] <= ((int)$_POST['vf_page_load_stamp'])+$time_limit) || empty($_POST['vf_page_send_stamp'])){
-                echo "Form submission failed. Please press 'back' in your browser to try again.";
+                echo "Form submission failed. Please press 'back' in your browser to try again. 2";
                 die();
             }
         } else {
-            echo "Form submission failed. Please press 'back' in your browser to try again.";
+            echo "Form submission failed. Please press 'back' in your browser to try again. 3";
             die();
         }
         $subject = "EDGE PCs - Enquiry";
-        $recipient = 'enquire@edgepcs.com.au';
-        // $recipient = "matt.patterson94@gmail.com";
+        $recipient = "enquire@edgepcs.com.au";
+        $cc = $_POST['cc'];
+        $bcc = $_POST['bcc'];
         $from = $_POST['name'];
         $fromemail = $_POST['email'];
         $htmlmessage = "<style type='text/css'>body {font-family:Arial, Helvetica; font-size:12px; color:#333333;} b {color:#5c7893;}</style><html><body>";
@@ -63,10 +65,8 @@ if (!empty($_POST['Submit'])) {
         $htmlmessage .= "</body></html>";
     }
     $attachments = $_FILES;
-
     send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=true,$cc,$bcc);
     $confirmmessage = "Thank you for your email";
-
     if(isset($_POST['send_confirmation']) && $_POST['send_confirmation'] == true) { 
         send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=true);
     }
@@ -89,6 +89,9 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
                   exit;
                   */
     }
+    include_once("Mail.php");
+    include_once("Mail/mime.php");
+
 
     $recipient = (!empty($cc))?$recipient.", ".$cc:$recipient;
     $to = $recipient;
@@ -96,16 +99,36 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
 
 
     $from = $from.' <'.$fromemail.'>';
+    $hdrs = array(
+        'To' => "$to",
+        'From' => "$from",
+        'Subject' => "$subject"
+    );
+    if(!empty($cc)){
+        $hdrs['Cc'] = "$cc";
+    }
 
-    // To send HTML mail, the Content-type header must be set
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
-    // Additional headers
-    $headers .= 'From: Enquiry Form <noreply@'.$_SERVER['HTTP_HOST'].'>' . "\r\n";
-
-
-    if(!mail($recipient, $subject, $htmlmessage, $headers)){
+    $crlf = "\n";
+    $mime = new Mail_mime($crlf);
+    if(!$mime->setTxtBody($textmessage)){
+        echo "Failed making text body.<br/>";
+    }
+    if(!$mime->setHTMLBody($htmlmessage)){
+        echo "Failed making HTML body.<br/>";
+    }
+    if(!empty($attachments)){
+        foreach($attachments as $file){
+            if(!$mime->addAttachment($file['tmp_name'], $file['type'], $file['name'], true, "base64")){
+                echo "Failed adding attachment.<br/>";
+                exit;
+            }
+        }
+    }
+    $body = $mime->get();
+    $hdrs = $mime->headers($hdrs);
+    $mail =& Mail::factory('sendmail');
+    if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
         //echo "Mail was sent.";
