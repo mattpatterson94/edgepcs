@@ -199,17 +199,18 @@
 										</div>
 										<p ng-show="!quotelist.length" class="text-center">No items in quote.</p>
 										<hr>
-										<h2><small>Total:</small> {{(total() | currency) || total()}}<sup ng-show="totalIncomplete">*</sup></h2>
+										<input type="hidden" name="end_data_fields" value="end_data_fields" />
+										<input type="hidden" name="total" class="quote_total_i">
+										<h2><small>Total:</small> <span class="quote_total_p">{{(total() | currency) || total()}}</span><sup ng-show="totalIncomplete">*</sup></h2>
 										<p ng-show="totalIncomplete">* Due to one or more items having no price, total amount is incomplete.</p>
 									</div>
 									<div class="large-5 columns">
 										<div class="step-one" ng-show="currentpage == 1">
 											<p>Want to add any add-ons to your quote? Feel free to press the <strong>+</strong> next to the add-ons you want.</p>
 										</div>
-										<input type="hidden" name="end_data_fields" value="end_data_fields" />
 										<div class="step-two" ng-show="currentpage == 2">
 											<label for="comments">Any comments or requests?</label>
-											<textarea id="comments" name="comments[]" placeholder="eg. I need an extra hard drive"></textarea>
+											<textarea id="comments" name="comments" placeholder="eg. I need an extra hard drive"></textarea>
 										</div>
 										<div class="step-three" ng-show="currentpage == 3">
 											<label for="name3">Name</label>
@@ -323,10 +324,10 @@
 							</div>
 							<div class="row">
 								<div class="small-3 columns">
-									<label for="enquiry-type" class="inline">Enquiry</label>
+									<label for="enquiry-type2" class="inline">Enquiry</label>
 								</div>
 								<div class="small-9 columns">
-									<select id="enquiry-type" name="type">
+									<select id="enquiry-type2" name="type">
 										<option>New Computer</option>
 										<option>Computer Repair</option>
 										<option>Remote Support</option>

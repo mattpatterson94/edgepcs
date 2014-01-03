@@ -211,8 +211,15 @@ function computerBuild($scope) {
 	$scope.submit = function() {
 		var validform = $('#quoteform').parsley('validate');
 		if (validform) {
-			$('.quote_price_i').val($('.quote_price_p').html());
-			$('.quote_title_i').val($('.quote_title_p').html());
+			$('.quote_total_i').val($('.quote_total_p').html());
+			$('.quote_price_i').each(function() {
+				var item = ($('.quote_price_i').index($(this)));
+				$(this).val($('.quote_price_p').eq(item).html());
+			});
+			$('.quote_title_i').each(function() {
+				var item = ($('.quote_title_i').index($(this)));
+				$(this).val($('.quote_title_p').eq(item).html());
+			});
 		}
 	}
 }
