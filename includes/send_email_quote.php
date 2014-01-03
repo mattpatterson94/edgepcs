@@ -80,7 +80,7 @@ if (!empty($_POST['Submit'])) {
 
 
     if(isset($_POST['send_confirmation']) && $_POST['send_confirmation'] == true) { 
-        send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=true);
+        send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=false);
     }
     // remove safe_form cookie
     @setcookie("safe_form_".$_POST['form_name'],"", time()-3600,"/");
@@ -100,7 +100,6 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
 
     }
 
-    die();
     include_once("Mail.php");
     include_once("Mail/mime.php");
 
