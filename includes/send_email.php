@@ -81,19 +81,19 @@ if (!empty($_POST['Submit'])) {
 function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc="",$bcc=""){
     if($debug){
         error_reporting(E_ALL);
-        
         ini_set('display_errors', 'on');
-        /*
+
         
                   echo "<b>Subject:</b> $subject <br/><b>Recipient:</b> $recipient <br/><b>From:</b> $from <br/><b>From Email:</b> $fromemail <br/><b>HTML:</b> $htmlmessage <br/> TEXT:</b> $textmessage <br/><br/>";
                   echo "<pre>";
                   print_r($attachments);
                   echo "</pre>";
-                  exit; */
 
     }
     include_once("Mail.php");
     include_once("Mail/mime.php");
+
+    echo "96 Got here";
 
     $recipient = (!empty($cc))?$recipient.", ".$cc:$recipient;
     $to = $recipient;
@@ -128,16 +128,26 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
         }
     }
 
+    echo "131 Got here";
     $body = $mime->get();
     $hdrs = $mime->headers($hdrs);
     $factory = new Mail();
     $mail =& $factory->factory('sendmail');
+    echo "135 Got here";
+    echo $mail->send($recipient, $hdrs, $body);
+    $error = PEAR::isError($mail);
+    if ($error){
+        echo 'An error occurred.';
+        echo $error->getMessage(), "\n";
+    } else {
+        echo "No error";
+    }
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
-        // echo "Mail was sent.";
+        echo "Mail was sent.";
     }
-    // echo "GOT HERE!!";
+    echo "GOT HERE!!";
     exit;
 }
 ?>
