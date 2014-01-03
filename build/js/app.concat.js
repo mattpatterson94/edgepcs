@@ -211,7 +211,8 @@ function computerBuild($scope) {
 	$scope.submit = function() {
 		var validform = $('#quoteform').parsley('validate');
 		if (validform) {
-			alert("YAY!");
+			$('.quote_price_i').val($('.quote_price_p').html());
+			$('.quote_title_i').val($('.quote_title_p').html());
 		}
 	}
 }
