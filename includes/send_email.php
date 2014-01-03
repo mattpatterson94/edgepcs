@@ -131,15 +131,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $body = $mime->get();
     $hdrs = $mime->headers($hdrs);
     $factory = new Mail();
-
-    $params = array();
-    $params['host'] = 'mail.devna.me';
-    $params['port'] = '25';
-    $params['auth'] = 'plain';
-    $params['username'] = 'noreply@edgepcs.devna.me';
-    $params['password'] = 'slipknot1';
-
-    $mail =& $factory->factory('smtp', $params);
+    $mail =& $factory->factory('sendmail');
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
