@@ -155,7 +155,7 @@
 							<li><a class="button" ng-click="addComputertoQuote()">Add to quote</a></li>
 						</ul>
 						<div class="panel quote-box" ng-show="showQuote" ng-cloak class="ng-cloak">
-							<form id="quoteform" action="/includes/send_email_quote" method="post">
+							<form id="quoteform" action="/includes/send_email_quote.php" method="post" class="safe verify captcha">
 								<div class="row">
 									<div class="large-7 columns">
 										<h4 ng-show="currentpage == 1">Your quote</h4>
@@ -178,16 +178,19 @@
 												<p><strong>Delete</strong></p>
 											</div>
 										</div>
+										<input type="hidden" name="start_data_fields" value="start_data_fields" />
 										<div class="row" ng-repeat="quote in quotelist">
 											<div class="small-3 columns">
-												<input type="text" ng-model="quote.qty" maxlength="2" parsley-required="true">
+												<input type="text" name="quantity[]" ng-model="quote.qty" maxlength="2" parsley-required="true">
 												
 											</div>
 											<div class="small-4 columns">
-												<p>{{quote.title}}</p>
+												<input type="hidden" name="title[]" val="" class="quote_title_i">
+												<p class="quote_title_p">{{quote.title}}</p>
 											</div>
 											<div class="small-3 columns">
-												<span class="label">{{((quote.price * quote.qty) | currency) || quote.price}}</span>
+												<input type="hidden" name="price[]" val="" class="quote_price_i">
+												<span class="label quote_price_p">{{((quote.price * quote.qty) | currency) || quote.price}}</span>
 											</div>
 											<div class="small-2 columns">
 												<a ng-click="removeItem()" class="tiny button">X</a>
@@ -202,32 +205,34 @@
 										<div class="step-one" ng-show="currentpage == 1">
 											<p>Want to add any add-ons to your quote? Feel free to press the <strong>+</strong> next to the add-ons you want.</p>
 										</div>
+										<input type="hidden" name="end_data_fields" value="end_data_fields" />
 										<div class="step-two" ng-show="currentpage == 2">
 											<label for="comments">Any comments or requests?</label>
-											<textarea id="comments" placeholder="eg. I need an extra hard drive"></textarea>
+											<textarea id="comments" name="comments[]" placeholder="eg. I need an extra hard drive"></textarea>
 										</div>
 										<div class="step-three" ng-show="currentpage == 3">
 											<label for="name">Name</label>
-											<input type="text" id="name" placeholder="eg. Joe Blogs" parsley-required="true">
+											<input type="text" id="name" name="name" placeholder="eg. Joe Blogs" parsley-required="true">
 											
 											<label for="email">Email</label>
-											<input type="email" id="email" placeholder="eg. joe@newcomputerpls.com" parsley-required="true">
+											<input type="email" id="email" name="email" placeholder="eg. joe@newcomputerpls.com" parsley-required="true">
 										</div>
 									</div>
 								</div>
+							
+								<hr>
+								<div class="row">
+									<div class="large-6 columns">
+										<p><a class="button" ng-class="{disabled: currentpage == 1}" ng-click="decrement()">Go back to previous step</a></p>
+									</div>
+									<div class="large-6 columns text-right">
+										<p>
+											<a class="button" ng-class="{disabled: currentpage == 2 && total() == 0 && !totalIncomplete}" ng-hide=" currentpage == pages" ng-click="increment()">Proceed to next step</a>
+											<input type="submit"  name="Submit" class="button" ng-class="{disabled: total() == 0 && !totalIncomplete}" ng-show="currentpage == pages" ng-click="submit()" value="Submit">
+										</p>
+									</div>
+								</div>
 							</form>
-							<hr>
-							<div class="row">
-								<div class="large-6 columns">
-									<p><a class="button" ng-class="{disabled: currentpage == 1}" ng-click="decrement()">Go back to previous step</a></p>
-								</div>
-								<div class="large-6 columns text-right">
-									<p>
-										<a class="button" ng-class="{disabled: currentpage == 2 && total() == 0 && !totalIncomplete}" ng-hide=" currentpage == pages" ng-click="increment()">Proceed to next step</a>
-										<input type="submit" class="button" ng-class="{disabled: total() == 0 && !totalIncomplete}" ng-show="currentpage == pages" ng-click="submit()" value="Submit">
-									</p>
-								</div>
-							</div>
 						</div>
 						
 						<hr>
