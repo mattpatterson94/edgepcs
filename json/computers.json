@@ -3,10 +3,10 @@
 		{
 			"title": "Personal Everyday PC",
 			"desc": "This computer is suitable for a person who is a casual computer user and can easily handle internet browsing (facebook, checking emails, occasional solitaire, word processing etc) and would rather not spend too much for something they do not particularly need. If this sounds familiar then this build is for you.",
-			"price": "430",
+			"price": "429",
 			"specs": [
 				{
-					"CPU": "Intel Core i3 3.4GHz",
+					"CPU": "AMD APU 3.2Ghz Dual Core",
 					"Memory": "4GB RAM",
 					"Storage": "500GB Hard Drive"
 				}
