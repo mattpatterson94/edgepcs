@@ -53,11 +53,21 @@ if (!empty($_POST['Submit'])) {
 
         // comments
         $htmlmessage .= "<b>Comments:</b><br> ";
-        if (isset($_POST['comments'])) {
+        if (isset($_POST['comments']) && !empty($_POST['comments'])) {
             $htmlmessage .= $_POST['comments'];
         } else {
             $htmlmessage .= "No Comments";
         }        
+
+        $htmlmessage .= "<br><br>";
+
+        // comments
+        $htmlmessage .= "<b>Total Price:</b><br> ";
+        if (isset($_POST['total']) && !empty($_POST['total'])) {
+            $htmlmessage .= $_POST['total'];
+        } else {
+            $htmlmessage .= "Undetermined";
+        }               
 
 
         $htmlmessage .= "<br><br>";
@@ -75,7 +85,7 @@ if (!empty($_POST['Submit'])) {
         $htmlmessage .= "</body></html>";
     }
     $attachments = $_FILES;
-    send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=true,$cc,$bcc);
+    send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc,$bcc);
     $confirmmessage = "Thank you for your email";
 
 
@@ -94,9 +104,7 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     if($debug){
         error_reporting(E_ALL);
         ini_set('display_errors', 'on');
-
-        
-                  echo "<b>Subject:</b> $subject <br/><b>Recipient:</b> $recipient <br/><b>From:</b> $from <br/><b>From Email:</b> $fromemail <br/><b>HTML:</b> $htmlmessage <br/><br/>";
+        echo "<b>Subject:</b> $subject <br/><b>Recipient:</b> $recipient <br/><b>From:</b> $from <br/><b>From Email:</b> $fromemail <br/><b>HTML:</b> $htmlmessage <br/><br/>";
 
     }
 

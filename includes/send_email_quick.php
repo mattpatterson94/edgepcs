@@ -65,7 +65,7 @@ if (!empty($_POST['Submit'])) {
         $htmlmessage .= "</body></html>";
     }
     $attachments = $_FILES;
-    send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=true,$cc,$bcc);
+    send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc,$bcc);
     $confirmmessage = "Thank you for your email";
     if(isset($_POST['send_confirmation']) && $_POST['send_confirmation'] == true) { 
         send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=false);

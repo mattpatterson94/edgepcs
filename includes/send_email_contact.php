@@ -82,7 +82,7 @@ if (!empty($_POST['Submit'])) {
     send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc,$bcc);
     $confirmmessage = "Thank you for your email";
     if(isset($_POST['send_confirmation']) && $_POST['send_confirmation'] == true) { 
-        send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=true);
+        send_email($subject,$recipient,"EDGE PCs","noreply@".$_SERVER['HTTP_HOST'],$confirmmessage,$textmessage,$debug=false);
     }
     // remove safe_form cookie
     @setcookie("safe_form_".$_POST['form_name'],"", time()-3600,"/");
