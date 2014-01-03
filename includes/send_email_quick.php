@@ -19,7 +19,7 @@ if (!empty($_POST['Submit'])) {
             echo "Form submission failed. Please press 'back' in your browser to try again. 3";
             die();
         }
-        $subject = "EDGE PCs - Enquiry";
+        $subject = "EDGE PCs - Quick Enquiry";
         $recipient = "enquire@edgepcs.com.au";
         $cc = $_POST['cc'];
         $bcc = $_POST['bcc'];
