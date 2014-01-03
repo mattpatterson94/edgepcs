@@ -93,8 +93,6 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     include_once("Mail.php");
     include_once("Mail/mime.php");
 
-    echo "96 Got here";
-
     $recipient = (!empty($cc))?$recipient.", ".$cc:$recipient;
     $to = $recipient;
     $recipient = (!empty($bcc))?$recipient.", ".$bcc:$recipient;
@@ -128,26 +126,14 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
         }
     }
 
-    echo "131 Got here";
     $body = $mime->get();
     $hdrs = $mime->headers($hdrs);
     $factory = new Mail();
     $mail =& $factory->factory('sendmail');
-    echo "135 Got here";
-    echo $mail->send($recipient, $hdrs, $body);
-    $error = PEAR::isError($mail);
-    if ($error){
-        echo 'An error occurred.';
-        echo $error->getMessage(), "\n";
-    } else {
-        echo "No error";
-    }
     if(!$mail->send($recipient, $hdrs, $body)){
         echo "Failed sending mail.";
     } else {
-        echo "Mail was sent.";
+        // echo "Mail was sent.";
     }
-    echo "GOT HERE!!";
-    exit;
 }
 ?>
