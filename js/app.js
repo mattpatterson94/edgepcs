@@ -198,10 +198,13 @@ $(document).ready(function(){
     });
 
 
-	$('#appointment').datetimepicker({
+	$('#appointment-time').datetimepicker({
 		inline:true,
-		onSelect: function(dateText, inst) {
-			$('#appointment-time').value = dateText;
-		}
+		onSelectDate:function(dateText, inst) {
+			$('#appointment').val(dateText);
+		},
+		onSelectTime:function(dateText, inst) {
+			$('#appointment').val(dateText);
+		}		
 	}); 
 });
