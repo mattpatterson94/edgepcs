@@ -211,11 +211,11 @@
 											<textarea id="comments" name="comments[]" placeholder="eg. I need an extra hard drive"></textarea>
 										</div>
 										<div class="step-three" ng-show="currentpage == 3">
-											<label for="name">Name</label>
-											<input type="text" id="name" name="name" placeholder="eg. Joe Blogs" parsley-required="true">
+											<label for="name3">Name</label>
+											<input type="text" id="name3" name="name" placeholder="eg. Joe Blogs" parsley-required="true">
 											
-											<label for="email">Email</label>
-											<input type="email" id="email" name="email" placeholder="eg. joe@newcomputerpls.com" parsley-required="true">
+											<label for="email3">Email</label>
+											<input type="email" id="email3" name="email" placeholder="eg. joe@newcomputerpls.com" parsley-required="true">
 										</div>
 									</div>
 								</div>
@@ -306,18 +306,18 @@
 						<form parsley-validate action="includes/send_email_contact.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
 							<div class="row">
 								<div class="small-3 columns">
-									<label for="name" class="inline">Name</label>
+									<label for="name2" class="inline">Name</label>
 								</div>
 								<div class="small-9 columns">
-									<input required type="text" id="name" name="name" placeholder="eg. Joe Blogs">
+									<input required type="text" id="name2" name="name" placeholder="eg. Joe Blogs">
 								</div>
 							</div>
 							<div class="row">
 								<div class="small-3 columns">
-									<label for="email" class="inline">Email</label>
+									<label for="email2" class="inline">Email</label>
 								</div>
 								<div class="small-9 columns">
-									<input type="email" required parsley-type="email" id="email" name="email" placeholder="eg. joe@ineedhelp.com">
+									<input type="email" required parsley-type="email" id="email2" name="email" placeholder="eg. joe@ineedhelp.com">
 								</div>
 							</div>
 							<div class="row">
@@ -325,7 +325,7 @@
 									<label for="enquiry-type" class="inline">Enquiry</label>
 								</div>
 								<div class="small-9 columns">
-									<select id="enquiry-type">
+									<select id="enquiry-type" name="type">
 										<option>New Computer</option>
 										<option>Computer Repair</option>
 										<option>Remote Support</option>
@@ -337,16 +337,16 @@
 									<label for="appointment" class="inline">Appointment</label>
 								</div>
 								<div class="small-9 columns">
-									<input type="hidden" name="appointment" id="appointment-time"/>
-									<input type="text" id="appointment">
+									<input type="hidden" name="appointment" id="appointment"/>
+									<input type="text" id="appointment-time">
 								</div>
 							</div>
 							<div class="row">
 								<div class="small-3 columns">
-									<label for="message" class="inline">Message</label>
+									<label for="message2" class="inline">Message</label>
 								</div>
 								<div class="small-9 columns">
-									<textarea id="message" name="message" placeholder="Please leave message here"></textarea>
+									<textarea id="message2" name="message" placeholder="Please leave message here"></textarea>
 								</div>
 							</div>
 							<input type="submit" name="Submit" value="Submit" class="right button">
@@ -364,7 +364,7 @@
 				<p>&copy; Copyright EDGE PCs 2013. All rights reserved.</p>
 			</div>
 			<div class="large-6 columns text-right">
-				<p>Design by <a href="#">Jordsta</a>.</p>
+				<p>Design by <a href="http://jordsta.com">Jordsta</a>.</p>
 			</div>
 		</div>
 	</footer>
