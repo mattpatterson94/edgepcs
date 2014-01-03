@@ -2,4 +2,14 @@
 
 section.contact-us {
 	@include margin-std;
+
+	.xdsoft_inline {
+		margin-bottom:12px;
+		width:100%;
+	}
+
+	#message {
+		min-height:150px;
+	}
+
 }

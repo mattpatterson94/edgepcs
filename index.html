@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>EDGE PCs | Home</title>
+	<title>EDGE PCs - All your computer solutions in one place!</title>
 	<link href='http://fonts.googleapis.com/css?family=Alegreya+Sans:300,400,400italic,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/app.css" />
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.4/angular.min.js"></script>
@@ -39,7 +39,7 @@
 				</section>
 				<section class="large-4 columns enquiry-form">
 					
-					<form action="includes/send_email.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
+					<form parsley-validate action="includes/send_email_quick.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
 						<div class="row">
 							<div class="small-9 small-offset-3 columns">
 								<h3>Get in touch now</h3>
@@ -50,7 +50,7 @@
 								<label for="name" class="inline">Name</label>
 							</div>
 							<div class="small-9 columns">
-								<input type="text" name="name" id="name" placeholder="eg. Joe Blogs">
+								<input type="text" required name="name" id="name" placeholder="eg. Joe Blogs">
 							</div>
 						</div>
 						<div class="row">
@@ -58,7 +58,7 @@
 								<label for="email" class="inline">Email</label>
 							</div>
 							<div class="small-9 columns">
-								<input type="email" name="email" id="email" placeholder="eg. joe@ineedhelp.com">
+								<input type="email" required parsley-email name="email" id="email" placeholder="eg. joe@ineedhelp.com">
 							</div>
 						</div>
 						<div class="row">
@@ -78,7 +78,7 @@
 								<label for="message" class="inline">Message</label>
 							</div>
 							<div class="small-9 columns">
-								<textarea name="message" id="message" placeholder="(be as specific as you can, please)"></textarea>
+								<textarea name="message" id="message" placeholder="Please leave message here"></textarea>
 							</div>
 						</div>
 						<input type="submit" name="Submit" class="right button">
@@ -155,7 +155,7 @@
 							<li><a class="button" ng-click="addComputertoQuote()">Add to quote</a></li>
 						</ul>
 						<div class="panel quote-box" ng-show="showQuote" ng-cloak class="ng-cloak">
-							<form id="quoteform">
+							<form id="quoteform" action="/includes/send_email_quote" method="post">
 								<div class="row">
 									<div class="large-7 columns">
 										<h4 ng-show="currentpage == 1">Your quote</h4>
@@ -298,13 +298,13 @@
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate, vitae molestiae sapiente totam odit in praesentium necessitatibus. Nobis, provident, natus eveniet temporibus accusantium dignissimos in expedita quasi aliquid error. Aspernatur.</p>
 					</div>
 					<div class="large-6 columns">
-						<form>
+						<form parsley-validate action="includes/send_email_contact.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
 							<div class="row">
 								<div class="small-3 columns">
 									<label for="name" class="inline">Name</label>
 								</div>
 								<div class="small-9 columns">
-									<input type="text" id="name" placeholder="eg. Joe Blogs">
+									<input required type="text" id="name" name="name" placeholder="eg. Joe Blogs">
 								</div>
 							</div>
 							<div class="row">
@@ -312,7 +312,7 @@
 									<label for="email" class="inline">Email</label>
 								</div>
 								<div class="small-9 columns">
-									<input type="email" id="email" placeholder="eg. joe@ineedhelp.com">
+									<input type="email" required parsley-type="email" id="email" name="email" placeholder="eg. joe@ineedhelp.com">
 								</div>
 							</div>
 							<div class="row">
@@ -329,18 +329,11 @@
 							</div>
 							<div class="row">
 								<div class="small-3 columns">
-									<label for="appointment-date" class="inline">Appointment Date</label>
+									<label for="appointment" class="inline">Appointment</label>
 								</div>
 								<div class="small-9 columns">
-									<input type="date" id="appointment-date">
-								</div>
-							</div>
-							<div class="row">
-								<div class="small-3 columns">
-									<label for="appointment-time" class="inline">Appointment Time</label>
-								</div>
-								<div class="small-9 columns">
-									<input type="time" id="appointment-time">
+									<input type="hidden" name="appointment" id="appointment-time"/>
+									<input type="text" id="appointment">
 								</div>
 							</div>
 							<div class="row">
@@ -348,10 +341,10 @@
 									<label for="message" class="inline">Message</label>
 								</div>
 								<div class="small-9 columns">
-									<textarea id="message" placeholder="(be as specific as you can, please)"></textarea>
+									<textarea id="message" name="message" placeholder="Please leave message here"></textarea>
 								</div>
 							</div>
-							<input type="submit" class="right button">
+							<input type="submit" name="Submit" value="Submit" class="right button">
 						</form>
 					</div>
 				</div>
@@ -370,7 +363,7 @@
 			</div>
 		</div>
 	</footer>
-
-	<script src="build/js/app.min.js"></script>
+	<script src="/build/js/app.min.js"></script>
+	<script src="/js/jquery.datetimepicker.js"></script>
 </body>
 </html>

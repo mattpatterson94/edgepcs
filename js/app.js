@@ -195,4 +195,12 @@ $(document).ready(function(){
         $(this).find('input.vf_page_send_stamp').val(ts);
         return verifyform($(this));
     });
+
+
+	$('#appointment').datetimepicker({
+		inline:true,
+		onSelect: function(dateText, inst) {
+			$('#appointment-time').value = dateText;
+		}
+	}); 
 });
