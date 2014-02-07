@@ -2,8 +2,8 @@
 	"computers": [
 		{
 			"title": "Personal Everyday PC",
-			"desc": "This computer is suitable for a person who is a casual computer user and can easily handle internet browsing (facebook, checking emails, occasional solitaire, word processing etc) and would rather not spend too much for something they do not particularly need. If this sounds familiar then this build is for you.",
-			"price": "429",
+			"desc": "This computer is suitable for a person who is a casual computer user. It can easily handle internet browsing (facebook, checking emails, some games, word processing etc). If this sounds familiar then this build is for you.",
+			"price": "407",
 			"specs": [
 				{
 					"CPU": "AMD APU 3.2Ghz Dual Core",
@@ -13,42 +13,42 @@
 			]
 		},
 		{
-			"title": "Business Computer (mid-range)",
+			"title": "Business/Home mid-range computer",
 			"desc": "This build is more for someone that will be using their computer a lot of the time, mainly for business reasons or something that requires regular use. It's got that 'oompf' that will keep your computer responsive and will prevent any waiting around.",
-			"price": "620",
+			"price": "650",
 			"specs": [
 				{
 					"CPU": "Intel Core i3 3.4GHz",
 					"Memory": "8GB RAM (2x4GB) 1333mhz",
 					"Storage": "1TB SATA HDD",
-					"SSD": "128GB SATA 3 Samsung Pro Series"
+					"SSD": "60GB SATA 3 Samsung Pro Series"
 				}
 			]
 		},
 		{
 			"title": "Business Computer (high-end)",
 			"desc": "This computer is built to last. It will get you through most games at the highest quality. Pushing past the boundaries of the business or everyday computer, it will give that satisfying feeling when things load with phenomonal speed. If you are are a casual gamer, a dedicated business person, or you're just sick of the agonisingly slow perfomance of your current set-up, this is the computer for you.",
-			"price": "820",
+			"price": "824",
 			"specs": [
 				{
-					"CPU": "Intel Core i5 3530k (3GHz)",
-					"Memory": "8GB (2x4GB) 1600mhz DDR3 RAM",
+					"CPU": "Intel G3220 3Ghz 3Mb cache",
+					"Memory": "8GB DDR3 RAM",
 					"Storage": "1TB SATA HDD 7200rpm",
-					"SSD": "128GB SATA 3 Samsung Pro Series"
+					"SSD": "Samsung 120GB SATA 3"
 				}
 			]
 		},
 		{
 			"title": "Gaming/Multimedia PC",
 			"desc": "This is for the more enthusiastic gamer, or for someone with some serious multimedia needs. The multi-core design coupled with the newest graphics card on the market will blitz through any rendering you throw at it. The graphics card also supports up to 4 displays simultaneously for that extra real-estate that is often needed for heavy computer use or media editing.",
-			"price": "1599",
+			"price": "1291",
 			"specs": [
 				{
-					"CPU": "Intel Core i7 3770 (3.4GHz)",
+					"CPU": "Intel Core i5 4570 (3.2GHz) Haswell",
 					"Memory": "16GB (2x8GB) 1333mhz DDR3 RAM",
-					"Storage": "2 x 2TB SATA 3 HDD",
-					"SSD": "128GB SATA 3 Samsung Pro Series",
-					"Video Card": "3GB Nvidia GTX-660TI"
+					"Storage": "2TB SATA 3 HDD",
+					"SSD": "Samsung 120GB SATA 3",
+					"Video Card": "2GB Nvidia GTX-660"
 				}
 			]
 		},
