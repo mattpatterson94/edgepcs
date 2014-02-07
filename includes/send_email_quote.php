@@ -23,7 +23,8 @@ if (!empty($_POST['Submit'])) {
             die();
         }
         $subject = "EDGE PCs - Appointment/Enquiry";
-        $recipient = "enquire@edgepcs.com.au";
+        // $recipient = "enquire@edgepcs.com.au";
+        $recipient = "matt.patterson94@gmail.com";
         $cc = $_POST['cc'];
         $bcc = $_POST['bcc'];
         $from = $_POST['name'];
