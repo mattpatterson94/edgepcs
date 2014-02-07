@@ -14,10 +14,10 @@
 	<section class="page-header">
 		<header>
 			<div class="row">
-				<section class="large-3 columns">
+				<section class="large-3 small-12 columns">
 					<a href="#" class="logo"><img src="build/images/logo.png" alt="EDGE PCs"></a>
 				</section>
-				<nav class="large-6 columns">
+				<nav class="large-6 hide-for-small columns">
 					<ul class="inline-list right" data-magellan-expedition="fixed">
 						<li data-magellan-arrival="home"><a href="#home">Home</a></li>
 						<li data-magellan-arrival="computers"><a href="#computers">Our Computers</a></li>
@@ -83,7 +83,13 @@
 								<textarea name="message" id="message" placeholder="Please leave message here"></textarea>
 							</div>
 						</div>
-						<input type="submit" name="Submit" class="right button">
+						<div class="row">
+							<div class="small-12 columns">
+								<input type="submit" name="Submit" class="right button">
+							</div>
+						</div>						
+
+						
 					</form>
 				</section>
 			</div>
@@ -246,13 +252,13 @@
 						<p>The following are not included by default, but can be added to your order if needed:</p>
 						<div class="addons" ng-cloak class="ng-cloak">
 							<div class="row" ng-repeat="addon in addons">
-								<div class="small-3 columns">
+								<div class="small-3 large-3 columns">
 									<a ng-click="addAddontoQuote($index)" class="small button">+</a>
 								</div>
-								<div class="small-7 columns">
+								<div class="small-6 large-7 columns">
 									<p>{{addon.title}}</p>
 								</div>
-								<div class="small-2 columns">
+								<div class="small-3 large-2 columns">
 									<span class="label">{{addon.price | currency}}</span>
 								</div>
 							</div>
@@ -339,10 +345,10 @@
 								</div>
 							</div>
 							<div class="row">
-								<div class="small-3 columns">
+								<div class="small-12 large-3 columns">
 									<label for="appointment" class="inline">Appointment</label>
 								</div>
-								<div class="small-9 columns">
+								<div class="small-12 large-9 columns">
 									<input type="hidden" name="appointment" id="appointment"/>
 									<input type="text" id="appointment-time">
 									<label><input type="checkbox" parsley-group="not-required" class="no-appointment"/>No Appointment Needed?</label>

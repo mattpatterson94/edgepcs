@@ -6,6 +6,9 @@ section.contact-us {
 	.xdsoft_inline {
 		margin-bottom:12px;
 		// width:100%;
+		@media #{$small-only} {
+			
+		}
 	}
 
 	.no-appointment {
