@@ -10,7 +10,7 @@
 					"CPU": "Intel PENTIUM G3220",
 					"Memory": "G.Skill Ripjaws 4GB",
 					"Storage": "Seagate Barracude 500GB",
-                    "Operating System": "Windows 7 Home Premium"
+                    "OS": "Windows 7 Home Premium"
 				}
 			]
 		},
@@ -24,7 +24,7 @@
 					"CPU": "Intel Core i3 4130T",
 					"Memory": "G.Skill Ripjaws 4GB",
 					"Storage": "Seagate SSHD 1TB (HYBRID) (Super Fast)",
-                    "Operating System": "Windows 8.1"
+                    "OS": "Windows 8.1"
 				}
 			]
 		},
@@ -40,7 +40,7 @@
                     "Storage": "Seagate Barracuda 1TB",
                     "SSD": "Samsung 840 EVO Series 120GB SSD",
                     "Video Card": "Gigabyte GeForce GT 640 OC 2GB",
-                    "Operating System": "Windows 8.1"
+                    "OS": "Windows 8.1"
 				}
 			]
 		},
@@ -57,7 +57,7 @@
 					"Storage": "Seagate Barracuda 2TB",
 					"SSD": "Samsung 840 EVO Series 250GB SSD",
 					"Video Card": "Gigabyte GTX760 OC 2G",
-                    "Operating System": "Windows 8.1"
+                    "OS": "Windows 8.1"
 				}
 			]
 		},
@@ -74,7 +74,7 @@
 					"Storage": "Seagate Barracuda 2TB",
 					"SSD": "Samsung 840 EVO Series 250GB SSD",
 					"Video Card": "Gigabyte GTX760 OC 2G",
-                    "Operating System": "SteamOS"
+                    "OS": "SteamOS"
 				}
 			]
 		},	
