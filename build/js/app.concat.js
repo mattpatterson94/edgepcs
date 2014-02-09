@@ -224,6 +224,15 @@ function computerBuild($scope) {
 	}
 }
 
+$('.no-appointment').change(function() {
+	if(this.checked) {
+		$('.xdsoft_datetimepicker').show().fadeToggle();
+		$('#appointment').val("No Appointment");
+	} else {
+		$('.xdsoft_datetimepicker').hide().fadeToggle();
+	}
+});
+
 $("section.our-computers .addons a").click(function(){
 	var item = $(this).parent().next();
 	var itemtext = item.text().trim();
@@ -255,6 +264,18 @@ $(document).ready(function(){
         $(this).find('input.vf_page_send_stamp').val(ts);
         return verifyform($(this));
     });
+
+	$.when(getComputers()).done(function(data){
+		var computers = data.computers;
+		$('.comp-image').each(function() {
+			var index = $('.comp-image').index(this);
+			if(computers[index]['image']) {
+
+				$(this).attr("src", "/build/images/"+computers[index]['image']);	
+			}
+			
+		})  
+	});  
 
 
 	$('#appointment-time').datetimepicker({
