@@ -3,72 +3,78 @@
 		{
 			"title": "Personal Everyday PC",
 			"desc": "This computer is suitable for a person who is a casual computer user. It can easily handle internet browsing (facebook, checking emails, some games, word processing etc). If this sounds familiar then this build is for you.",
-			"price": "407",
+			"price": "540",
 			"image": "comp1.jpg",
 			"specs": [
 				{
-					"CPU": "AMD APU 3.2Ghz Dual Core",
-					"Memory": "4GB RAM",
-					"Storage": "500GB Hard Drive"
+					"CPU": "Intel PENTIUM G3220",
+					"Memory": "G.Skill Ripjaws 4GB",
+					"Storage": "Seagate Barracude 500GB",
+                    "Operating System": "Windows 7 Home Premium"
 				}
 			]
 		},
 		{
 			"title": "Business/Home mid-range computer",
 			"desc": "This build is more for someone that will be using their computer a lot of the time, mainly for business reasons or something that requires regular use. It's got that 'oompf' that will keep your computer responsive and will prevent any waiting around.",
-			"price": "650",
+			"price": "820",
 			"image": "comp2.jpg",
 			"specs": [
 				{
-					"CPU": "Intel Core i3 3.4GHz",
-					"Memory": "8GB RAM (2x4GB) 1333mhz",
-					"Storage": "1TB SATA HDD",
-					"SSD": "60GB SATA 3 Samsung Pro Series"
+					"CPU": "Intel Core i3 4130T",
+					"Memory": "G.Skill Ripjaws 4GB",
+					"Storage": "Seagate SSHD 1TB (HYBRID) (Super Fast)",
+                    "Operating System": "Windows 8.1"
 				}
 			]
 		},
 		{
 			"title": "Business Computer (high-end)",
 			"desc": "This computer is built to last. It will get you through most games at the highest quality. Pushing past the boundaries of the business or everyday computer, it will give that satisfying feeling when things load with phenomonal speed. If you are are a casual gamer, a dedicated business person, or you're just sick of the agonisingly slow perfomance of your current set-up, this is the computer for you.",
-			"price": "824",
+			"price": "1150",
 			"image": "comp3.jpg",
 			"specs": [
 				{
-					"CPU": "Intel G3220 3Ghz 3Mb cache",
-					"Memory": "8GB DDR3 RAM",
-					"Storage": "1TB SATA HDD 7200rpm",
-					"SSD": "Samsung 120GB SATA 3"
+					"CPU": "Intel Core i5 4440",
+					"Memory": "G.Skill Ripjaws 8GB",
+                    "Storage": "Seagate Barracuda 1TB",
+                    "SSD": "Samsung 840 EVO Series 120GB SSD",
+                    "Video Card": "Gigabyte GeForce GT 640 OC 2GB",
+                    "Operating System": "Windows 8.1"
 				}
 			]
 		},
 		{
 			"title": "Gaming/Multimedia PC",
 			"desc": "This is for the more enthusiastic gamer, or for someone with some serious multimedia needs. The multi-core design coupled with the newest graphics card on the market will blitz through any rendering you throw at it. The graphics card also supports up to 4 displays simultaneously for that extra real-estate that is often needed for heavy computer use or media editing.",
-			"price": "1291",
+			"price": "1930",
 			"image": "comp4.jpg",
 			"specs": [
 				{
-					"CPU": "Intel Core i5 4570 (3.2GHz) Haswell",
-					"Memory": "16GB (2x8GB) 1333mhz DDR3 RAM",
-					"Storage": "2TB SATA 3 HDD",
-					"SSD": "Samsung 120GB SATA 3",
-					"Video Card": "2GB Nvidia GTX-660"
+					"CPU": "Intel Core i5 4770K (3.5ghz) Haswell",
+                    "Motherboard": "Gigabyte Sniper B5 Motherboard",
+					"Memory": "Corsair Vengeance 16GB",
+					"Storage": "Seagate Barracuda 2TB",
+					"SSD": "Samsung 840 EVO Series 250GB SSD",
+					"Video Card": "Gigabyte GTX760 OC 2G",
+                    "Operating System": "Windows 8.1"
 				}
 			]
 		},
 		{
 			"title": "Steam Machine",
 			"desc": "This computer is rigged up and ready to go, built with the latest version of SteamOS and will be able to play all your games on steam with ease (the ones that work on linux atleast). If you prefer, windows can also be installed onto this machine for extra.",
-			"price": "1750",
+			"price": "1680",
 			"image": "comp5.jpg",
 			"specs": [
 				{
 					"CPU": "Intel Core i5 4670K 3.4GHz (3.8GHz Turbo)",
-					"Motherboard": "MSI Z87I Gaming AC Mini ITX Motherboard",
-					"Memory": "G.Skill Ripjaws F3-12800CL9D-8GBRL 8GB (2x4GB)",
-					"Storage": "Seagate Barracuda 2TB ST2000DM001",
+					"Motherboard": "Gigabyte GA-Z87N-WIFI MINI-ITX",
+					"Memory": "G.Skill Ripjaws 8GB",
+					"Storage": "Seagate Barracuda 2TB",
 					"SSD": "Samsung 840 EVO Series 250GB SSD",
-					"Video Card": "ASUS GeForce GTX 660 DirectCU II OC 2GB"
+					"Video Card": "Gigabyte GTX760 OC 2G",
+                    "Operating System": "SteamOS"
 				}
 			]
 		},	
