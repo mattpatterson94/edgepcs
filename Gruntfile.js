@@ -21,6 +21,7 @@ module.exports = function(grunt) {
           src: [
               'bower_components/jquery/dist/jquery.min.js',
               'bower_components/foundation/js/foundation.min.js',
+              'bower_components/stickyNavbar.js/jquery.stickyNavbar.min.js',
               // 'js/*.js'
               // 'js/!(app.concat|app.min).js'
               'js/parsley.min.js',
