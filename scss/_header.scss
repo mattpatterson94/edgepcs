@@ -1,33 +1,42 @@
-html, body {
-	height:100%;
-	width:100%;
-}
 // Header
 
 header {
 	// background: rgba($primary-color, 0.2);
 	// border-bottom: 1px solid $primary-color;
-	background: linear-gradient(to bottom, rgba($primary-color, 0.7) 0%, rgba($primary-color, 0) 100%);
-	padding: 15px 0;
+	// background: linear-gradient(to bottom, rgba($primary-color, 0.4) 0%, rgba($primary-color, 0) 100%);
+	background:$primary-color;
+	height:75px;
+	width:100%;
+	position:absolute;
+	top:0;
+	section.logo-section {
+		z-index:99999;
+	}
+	
 	// margin-bottom: 150px;
 	ul.inline-list {
-		margin-top: 15px;
+		line-height: 75px;
+		margin-bottom:0;
+		line-height: 4.7rem;
 		&.fixed {
 			background:$primary-color;
 			margin-top:0;
 			margin-left:0;
 			width:100%;
+			line-height: normal;
 			padding:5px 0 5px 55%;
 			@media #{$medium-only} {
 				padding-left:30%;
 			}
 		}
 		li a {
+			display: inline-block;
+			line-height: 1.6;
 			color: #FFF;
 			border-bottom: 3px solid transparent;
 			@include transition-std;
 		}
-		li.active a, li:hover a {
+		li a.active, li:hover a {
 			border-bottom: 3px solid $secondary-color;
 		}
 	}
