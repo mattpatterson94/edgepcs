@@ -1,4 +1,4 @@
-<?
+<?php
 session_start();
 
 include_once('extract_post_data.php');
