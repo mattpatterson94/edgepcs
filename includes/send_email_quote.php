@@ -101,57 +101,58 @@ if (!empty($_POST['Submit'])) {
 // send email
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessage,$attachments,$debug=false,$cc="",$bcc=""){
-    if($debug){
-        error_reporting(E_ALL);
-        ini_set('display_errors', 'on');
-        echo "<b>Subject:</b> $subject <br/><b>Recipient:</b> $recipient <br/><b>From:</b> $from <br/><b>From Email:</b> $fromemail <br/><b>HTML:</b> $htmlmessage <br/><br/>";
-
-    }
-
-    include_once("Mail.php");
-    include_once("Mail/mime.php");
-
-    $recipient = (!empty($cc))?$recipient.", ".$cc:$recipient;
-    $to = $recipient;
-    $recipient = (!empty($bcc))?$recipient.", ".$bcc:$recipient;
+    //SMTP needs accurate times, and the PHP time zone MUST be set
+    //This should be done in your php.ini, but this is how to do it if you don't have access to that
+    date_default_timezone_set('Australia/Brisbane');
+    require 'PHPMailer/PHPMailerAutoload.php';
 
 
-    $from = $from.' <'.$fromemail.'>';
-    $hdrs = array(
-        'To' => "$to",
-        'From' => "$from",
-        'Subject' => "$subject"
-    );
-    if(!empty($cc)){
-        $hdrs['Cc'] = "$cc";
-    }
+    //Create a new PHPMailer instance
+    $mail = new PHPMailer();
+    //Tell PHPMailer to use SMTP
+    $mail->isSMTP();
+    // //Enable SMTP debugging
+    // // 0 = off (for production use)
+    // // 1 = client messages
+    // // 2 = client and server messages
+    $mail->SMTPDebug = 2;
+    // //Ask for HTML-friendly debug output
+     //Set the hostname of the mail server
+    $mail->Host = 'smtp.gmail.com';
+    //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
+    $mail->Port = 587;
+    //Set the encryption system to use - ssl (deprecated) or tls
+    $mail->SMTPSecure = 'tls';
+    //Whether to use SMTP authentication
+    $mail->SMTPAuth = true;
+    //Username to use for SMTP authentication - use full email address for gmail
+    $mail->Username = "haydster7@gmail.com";
+    //Password to use for SMTP authentication
+    $mail->Password = "7retsdyah77";
+    //Set who the message is to be sent from
+    $mail->setFrom($fromemail, $from);
+    //Set an alternative reply-to address
+    // $mail->addReplyTo('replyto@example.com', 'First Last');
+    //Set who the message is to be sent to
+    // $mail->addAddress('enquiry@edgepcs.com.au', 'Edge PCs');
+    $mail->addAddress('enquire@edgepcs.com.au', 'Edge PCs');
+    //Set the subject line
+    $mail->Subject = $subject;
+    //Read an HTML message body from an external file, convert referenced images to embedded,
+    //convert HTML into a basic plain-text alternative body
+    // $mail->msgHTML(file_get_contents('contents.html'), dirname(__FILE__));
+    $mail->msgHTML($htmlmessage);
+    //Replace the plain text body with one created manually
+    $mail->AltBody = 'This is a plain-text message body';
+    //Attach an image file
+    // $mail->addAttachment('images/phpmailer_mini.png');
 
-
-    $crlf = "\n";
-    $mime = new Mail_mime($crlf);
-    if(!$mime->setTxtBody($textmessage)){
-        echo "Failed making text body.<br/>";
-    }
-    if(!$mime->setHTMLBody($htmlmessage)){
-        echo "Failed making HTML body.<br/>";
-    }
-    if(!empty($attachments)){
-        foreach($attachments as $file){
-            if(!$mime->addAttachment($file['tmp_name'], $file['type'], $file['name'], true, "base64")){
-                echo "Failed adding attachment.<br/>";
-                exit;
-            }
-        }
-    }
-
-    $body = $mime->get();
-    $hdrs = $mime->headers($hdrs);
-    $factory = new Mail();
-    $mail =& $factory->factory('sendmail');
-    if(!$mail->send($recipient, $hdrs, $body)){
-        echo "Failed sending mail.";
+    //send the message, check for errors
+    if (!$mail->send()) {
+        error_log("Error " . $mail->ErrorInfo);
+        echo "Mailer Error: " . $mail->ErrorInfo;
     } else {
-        // echo "Mail was sent.";
+        error_log("Sent");
+        echo "Message sent!";
     }
 }
-?>
