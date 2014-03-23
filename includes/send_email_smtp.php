@@ -96,17 +96,17 @@ function send_email($subject,$recipient,$from,$fromemail,$htmlmessage,$textmessa
     $mail->SMTPDebug = 2;
     // //Ask for HTML-friendly debug output
      //Set the hostname of the mail server
-    $mail->Host = 'mail.edgepcs.com.au';
+    $mail->Host = 'tls://in.mailjet.com';
     //Set the SMTP port number - 587 for authenticated TLS, a.k.a. RFC4409 SMTP submission
-    $mail->Port = 25;
+    $mail->Port = 587;
     //Set the encryption system to use - ssl (deprecated) or tls
     // $mail->SMTPSecure = 'tls';
     //Whether to use SMTP authentication
     $mail->SMTPAuth = true;
     //Username to use for SMTP authentication - use full email address for gmail
-    $mail->Username = "edge";
+    $mail->Username = "6993169059a85f02a04ecfd22392901c";
     //Password to use for SMTP authentication
-    $mail->Password = "DzHeyYA94VXD6ry";
+    $mail->Password = "7c00a7161b9766349c1184b9dd787b51";
     //Set who the message is to be sent from
     $mail->setFrom($fromemail, $from);
     //Set an alternative reply-to address
