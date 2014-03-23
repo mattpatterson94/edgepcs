@@ -35,6 +35,57 @@
 					<h1>Down for maintenance</h1>
 				</section>
 			</div>
+<form parsley-validate action="/includes/send_email_smtp.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
+						<div class="row">
+							<div class="small-9 small-offset-3 columns">
+								<h3>Get in touch now</h3>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-3 columns">
+								<label for="name" class="inline">Name</label>
+							</div>
+							<div class="small-9 columns">
+								<input type="text" required name="name" id="name" placeholder="eg. Joe Blogs">
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-3 columns">
+								<label for="email" class="inline">Email</label>
+							</div>
+							<div class="small-9 columns">
+								<input type="email" required parsley-email name="email" id="email" placeholder="eg. joe@ineedhelp.com">
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-3 columns">
+								<label for="enquiry-type" class="inline">Enquiry</label>
+							</div>
+							<div class="small-9 columns">
+								<select name="type" id="enquiry-type">
+									<option>General Computer Support</option>
+									<option>Computer Repair</option>
+									<option>New Computer</option>
+									<option>Remote Support</option>
+								</select>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-3 columns">
+								<label for="message" class="inline">Message</label>
+							</div>
+							<div class="small-9 columns">
+								<textarea name="message" id="message" placeholder="Please leave message here"></textarea>
+							</div>
+						</div>
+						<div class="row">
+							<div class="small-12 columns">
+								<input type="submit" name="Submit" class="right button">
+							</div>
+						</div>
+
+
+					</form>			
 		</div>
 	</section>
 
