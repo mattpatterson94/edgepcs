@@ -172,7 +172,7 @@
 							<li><a class="button" ng-click="addComputertoQuote()">Add to quote</a></li>
 						</ul>
 						<div class="panel quote-box" ng-show="showQuote" ng-cloak class="ng-cloak">
-							<form id="quoteform" action="#" method="post" class="safe verify captcha">
+							<form id="quoteform" action="/includes/send_email_quote.php" method="post" class="safe verify captcha">
 								<div class="row">
 									<div class="large-7 columns">
 										<h4 ng-show="currentpage == 1">Your quote</h4>
@@ -323,7 +323,7 @@
 						<p>For any enquiries, computer builds, appointments for computer support (remotely or direct) or general feedback - please use the contact form. We will get back to you as soon as possible answering your query as detailed as possible.</p>
 					</div>
 					<div class="large-6 columns">
-						<form parsley-validate action="#" method="post" enctype="multipart/form-data" class="safe verify captcha">
+						<form parsley-validate action="/includes/send_email_contact.php" method="post" enctype="multipart/form-data" class="safe verify captcha">
 							<div class="row">
 								<div class="small-3 columns">
 									<label for="name2" class="inline">Name</label>
