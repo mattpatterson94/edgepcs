@@ -219,7 +219,7 @@ $(document).ready(function(){
 			var index = $('.comp-image').index(this);
 			if(computers[index]['image']) {
 
-				$(this).attr("src", "/build/images/"+computers[index]['image']);	
+				$(this).attr("src", "build/images/"+computers[index]['image']);	
 			}
 			
 		})  
