@@ -1,0 +1,43 @@
+{
+  "name": "stickyNavbar.js",
+  "version": "1.0.5",
+  "homepage": "https://github.com/jbutko/stickyNavbar.js",
+  "author": {
+    "name": "Jozef Butko",
+    "email": "jbutko@gmail.com",
+    "url": "http://www.jozefbutko.com/"
+  },
+  "description": "Fancy sticky navigation jQuery plugin with smart anchor links highlighting",
+  "main": "jquery.stickyNavbar.min.js",
+  "keywords": [
+    "stickyNavbar",
+    "jQuery",
+    "nav",
+    "navigation",
+    "sticky"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jbutko/stickyNavbar.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbutko/stickyNavbar.js.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "1.0.5",
+  "_resolution": {
+    "type": "version",
+    "tag": "1.0.5",
+    "commit": "1aec3bb0a518e97e24048bc14570fbbff94e8399"
+  },
+  "_source": "https://github.com/jbutko/stickyNavbar.js.git",
+  "_target": "~1.0.3",
+  "_originalSource": "stickyNavbar.js"
+}
